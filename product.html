@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Детали продукта</title>
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body class="bg-pink-200 min-h-screen flex flex-col">
+<header class="bg-pink-700 p-4 fixed top-0 left-0 w-full z-50">
+    <h1 class="text-white text-2xl text-center">Детали продукта</h1>
+</header>
+<main class="flex-grow flex items-center justify-center p-8 pt-24">
+    <div id="product-details" class="bg-white border border-gray-200 rounded-lg shadow-lg p-6 w-full max-w-6xl">
+
+    </div>
+</main>
+<footer class="bg-white rounded-lg shadow py-6 px-4 dark:bg-gray-800 w-full text-center mt-8">
+    <span class="text-sm text-gray-500">© 2023 Flowbite™. All Rights Reserved.</span>
+</footer>
+<script>
+    const products = [
+        { id: 1, name: 'Классический зефир на яблочном пюре', price: 200, image: 'photo/DALL·E%202024-07-15%2016.50.24%20-%20A%20classic%20white%20marshmallow%20(zephyr)%20as%20the%20main%20object%20in%20the%20foreground,%20with%20a%20few%20apples%20in%20the%20background.%20The%20marshmallow%20is%20beautifully%20arrange.webp',
+            additionalImages: ['photo/яблоко1.webp', 'photo/яблоко2.webp'], description: 'Насладитесь нежным вкусом классического зефира на основе яблочного пюре, который тает во рту. Этот зефир создан из отборных яблок и натуральных ингредиентов, сохраняя все полезные свойства фруктов. Идеально подходит для приятных чаепитий и станет отличным лакомством для всей семьи. Состав: яблочное пюре, сахар, яичный белок, желатин, лимонная кислота, пектин, ванилин.Калории: 300 ккал, Белки: 1.5 г, Жиры: 0.2 г, Углеводы: 72 г.'},
+        { id: 2, name: 'Нежный зефир на клубничном пюре', price: 200, image: 'photo/клубника.webp', additionalImages: ['photo/клубника1.webp', 'photo/клубника2.webp'], description: 'Погрузитесь в сладкую свежесть клубничного зефира, изготовленного из сочных ягод. Этот зефир на основе клубничного пюре покорит вас своим насыщенным вкусом и нежной текстурой. Он станет идеальным дополнением к вашим десертам и чаю. Состав: клубничное пюре, сахар, яичный белок, желатин, лимонная кислота, пектин, ванилин. Калории: 290 ккал, Белки: 1.4 г, Жиры: 0.2 г, Углеводы: 70 г.' },
+        { id: 3, name: 'Ароматный зефир на основе малинового пюре', price: 210, image: 'photo/малина.webp', additionalImages: ['photo/малина1.webp', 'photo/малина3.webp'], description: 'Окунитесь в нежность малинового зефира, созданного из свежих ягод. Этот зефир на основе малинового пюре обладает насыщенным ароматом и легкой текстурой, делая его идеальным десертом для любого случая. Насладитесь естественной сладостью и изысканным вкусом. Состав: малиновое пюре, сахар, яичный белок, желатин, лимонная кислота, пектин, ванилин. Калории: 295 ккал, Белки: 1.3 г, Жиры: 0.2 г, Углеводы: 71 г.' },
+        { id: 4, name: 'Свежий зефир со вкусом черешни', price: 230, image: 'photo/черешня.webp', additionalImages: ['photo/черешня1.webp', 'photo/черешня2.webp'], description: 'Насладитесь нежным вкусом зефира со вкусом черешни, созданного из отборных ягод. Этот зефир обладает насыщенным черешневым ароматом и легкой текстурой, которая тает во рту. Он станет прекрасным дополнением к вашему чаю или десерту, даря моменты наслаждения и удовольствия. Состав: черешневое пюре, сахар, яичный белок, желатин, лимонная кислота, пектин, ванилин. Калории: 285 ккал, Белки: 1.4 г, Жиры: 0.2 г, Углеводы: 69 г.' },
+        { id: 5, name: 'Сладкий зефир на основе пюре из дыни', price: 250, image: 'photo/дыня.webp', additionalImages: ['photo/дыня1.webp', 'photo/дыня2.webp'], description: 'Погрузитесь в утонченное сочетание нежности и свежести с зефиром со вкусом дыни. Этот зефир, созданный на основе дынного пюре, покорит вас своим мягким вкусом и ароматом спелой дыни. Идеальный выбор для сладкоежек, ценящих натуральные десерты. Состав: дынное пюре, сахар, яичный белок, желатин, лимонная кислота, пектин, ванилин. Калории: 290 ккал, Белки: 1.5 г, Жиры: 0.2 г, Углеводы: 70 г.' },
+        { id: 6, name: 'Заманчивый зефир со вкусом спелой груши', price: 200, image: 'photo/груша.webp', additionalImages: ['photo/груша1.webp', 'photo/груша2.webp'], description: 'Насладитесь изысканным вкусом зефира со вкусом спелой груши, который пленяет своей мягкостью и ароматом. Этот зефир, созданный на основе грушевого пюре, подарит вам настоящее удовольствие своим нежным вкусом и легкой текстурой. Отличный выбор для гурманов, ценящих натуральные десерты. Состав: грушевое пюре, сахар, яичный белок, желатин, лимонная кислота, пектин, ванилин. Калории: 285 ккал, Белки: 1.5 г, Жиры: 0.2 г, Углеводы: 68 г.' },
+        { id: 7, name: 'Освежающий зефир со вкусом черники', price: 220, image: 'photo/черника.webp', additionalImages: ['photo/черника1.webp', 'photo/черника2.webp'], description: 'Погрузитесь в освежающее сочетание вкуса черники и нежной текстуры зефира. Этот зефир, созданный на основе черничного пюре, подарит вам насыщенный вкус летних ягод. Идеальный выбор для тех, кто ценит натуральные десерты с ягодной ноткой. Состав: черничное пюре, сахар, яичный белок, желатин, лимонная кислота, пектин, ванилин. Калории: 280 ккал, Белки: 1.4 г, Жиры: 0.2 г, Углеводы: 67 г.' },
+        { id: 8, name: 'Ароматный зефир со сгущенным молоком', price: 250, image: 'photo/сгущенка.webp', additionalImages: ['photo/сгущенка1.webp', 'photo/сгущенка2.webp'], description: 'Откройте для себя нежный вкус зефира со вкусом сгущенного молока, который пленяет своей кремовой текстурой и сладостью. Этот зефир, созданный на основе сгущенного молока, подарит вам незабываемое наслаждение с каждым кусочком. Прекрасный выбор для сладкоежек, предпочитающих утонченные десерты. Состав: сгущенное молоко, сахар, яичный белок, желатин, лимонная кислота, пектин, ванилин. Калории: 310 ккал, Белки: 1.6 г, Жиры: 0.3 г, Углеводы: 73 г.' },
+        { id: 9, name: 'Классический зефир с ореховой начинкой', price: 260, image: 'photo/орех.webp', additionalImages: ['photo/орех1.webp', 'photo/орех2.webp'], description: 'Погрузитесь в изысканное сочетание воздушной текстуры зефира и насыщенного орехового вкуса. Этот зефир с ореховой начинкой создан для настоящих гурманов, ценящих гармонию сладости и ореховой насыщенности. Идеально подходит для тех, кто любит утонченные десерты с богатым вкусом. Состав: ореховая начинка, сахар, яичный белок, желатин, лимонная кислота, пектин, ванилин. Калории: 320 ккал, Белки: 2.0 г, Жиры: 5.0 г, Углеводы: 65 г.' },
+        { id: 10, name: 'Зефир с начинкой из нуги на основе яблочного пюре', price: 270, image: 'photo/нуга.webp', additionalImages: ['photo/нуга1.webp', 'photo/нуга2.webp'], description: 'Откройте для себя неповторимое сочетание воздушного зефира и нежной нуги. Этот зефир с начинкой из нуги подарит вам уникальное наслаждение своим богатым вкусом и кремовой текстурой. Идеальный выбор для тех, кто ценит утонченные десерты с оригинальной начинкой. Состав: начинка из нуги, сахар, яичный белок, желатин, лимонная кислота, пектин, ванилин. Калории: 330 ккал, Белки: 1.8 г, Жиры: 6.0 г, Углеводы: 64 г.' },
+        { id: 11, name: 'Роскошный зефир на основе черного шоколада', price: 220, image: 'photo/шоколад.webp', additionalImages: ['photo/шоколад1.webp', 'photo/шоколад2.webp'], description: 'Погрузитесь в роскошное сочетание воздушного зефира и насыщенного вкуса черного шоколада. Этот зефир, созданный на основе черного шоколада, подарит вам настоящее наслаждение своим глубоким ароматом и нежной текстурой. Идеально подходит для ценителей изысканных десертов. Состав: черный шоколад, сахар, яичный белок, желатин, лимонная кислота, пектин, ванилин. Калории: 340 ккал, Белки: 2.0 г, Жиры: 8.0 г, Углеводы: 62 г.' },
+        { id: 12, name: 'Классический зефир с начинкой из яблочного джема', price: 200, image: 'photo/джем.webp', additionalImages: ['photo/джем1.webp', 'photo/джем2.webp'], description: 'Насладитесь классическим зефиром с ароматной начинкой из яблочного джема, который тает во рту. Этот зефир, созданный на основе натурального яблочного пюре, подарит вам вкус спелых яблок и нежную текстуру. Прекрасный выбор для любителей фруктовых десертов. Состав: яблочный джем, сахар, яичный белок, желатин, лимонная кислота, пектин, ванилин. Калории: 300 ккал, Белки: 1.5 г, Жиры: 0.2 г, Углеводы: 72 г.' }
+    ];
+
+    function getProductById(id) {
+        return products.find(product => product.id === id);
+    }
+
+    function getQueryParams() {
+        const params = new URLSearchParams(window.location.search);
+        return {
+            id: parseInt(params.get('id'))
+        };
+    }
+
+    function displayProductDetails() {
+        const { id } = getQueryParams();
+        const product = getProductById(id);
+
+        if (product) {
+            const productDetailsContainer = document.getElementById('product-details');
+            productDetailsContainer.innerHTML = `
+                <div class="flex flex-col lg:flex-row items-center lg:items-start">
+                    <div class="relative w-full lg:w-1/2 h-48 lg:h-auto">
+                        <div class="slider">
+                            <img class="rounded-t-lg w-full h-48 p-10 lg:h-auto object-cover mb-4 lg:mb-0 lg:mr-4" src="${product.image}" alt="${product.name}" />
+                            ${product.additionalImages.map(image => `<img class="rounded-t-lg p-10 w-full h-48 lg:h-auto object-cover mb-4 lg:mb-0 lg:mr-4 hidden" src="${image}" alt="${product.name}" />`).join('')}
+                            <button class="prev absolute top-1/2 left-0 transform -translate-y-1/2 bg-white text-gray-800 p-2 rounded-full">❮</button>
+                            <button class="next absolute top-1/2 right-0 transform -translate-y-1/2 bg-white text-gray-800 p-2 rounded-full">❯</button>
+                        </div>
+                    </div>
+                    <div class="flex flex-col lg:w-1/2">
+                        <h2 class="text-3xl font-bold italic text-blue-900 mb-2">${product.name}</h2>
+                        <p class="text-gray-700 font-bold italic mb-4">${product.description}</p>
+                        <div class="mt-auto">
+                            <p class="text-lg font-semibold mb-4">Цена за 1 кг - ${product.price} грн.</p>
+                        </div>
+                    </div>
+                </div>
+            `;
+
+            setupSlider();
+        }
+    }
+
+    function setupSlider() {
+        const slides = document.querySelectorAll('.slider img');
+        let currentSlide = 0;
+
+        document.querySelector('.prev').addEventListener('click', () => {
+            slides[currentSlide].classList.add('hidden');
+            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+            slides[currentSlide].classList.remove('hidden');
+        });
+
+        document.querySelector('.next').addEventListener('click', () => {
+            slides[currentSlide].classList.add('hidden');
+            currentSlide = (currentSlide + 1) % slides.length;
+            slides[currentSlide].classList.remove('hidden');
+        });
+    }
+
+    window.onload = () => {
+        displayProductDetails();
+    };
+</script>
+</body>
+</html>

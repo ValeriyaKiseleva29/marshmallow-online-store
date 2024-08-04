@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Зефир в Che</title>
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body class="bg-pink-200 min-h-screen flex flex-col pt-20">
+<header class="bg-pink-700 p-8 fixed top-0 left-0 w-full z-50">
+    <nav class="flex items-center justify-between flex-wrap">
+        <div class="flex items-center flex-shrink-0 text-white mr-6">
+            <svg class="fill-current h-8 w-8 mr-2" width="54" height="54" viewBox="0 0 54 54" xmlns="http://www.w3.org/2000/svg">
+                <path d="M13.5 22.1c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 8.1 17.55 9.45 3.6.9 6.75-.45 9.45-4.05-1.8 7.2-6.3 10.8-13.5 10.8-10.8 0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05zM0 38.3c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 8.1 17.55 9.45 3.6.9 6.75-.45 9.45-4.05-1.8 7.2-6.3 10.8-13.5 10.8-10.8 0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05z"/>
+            </svg>
+            <span class="font-semibold text-xl tracking-tight">Зефир в Che</span>
+        </div>
+        <div class="block lg:hidden">
+            <button class="flex items-center px-3 py-2 border rounded text-teal-200 border-teal-400 hover:text-white hover:border-white">
+                <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
+            </button>
+        </div>
+        <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
+            <div class="text-sm lg:flex-grow">
+                <a href="#" id="info-link" class="block mt-4 lg:inline-block lg:mt-0 text-green-200 hover:text-white mr-4">
+                    Інформация для потребителя
+                </a>
+                <a href="#" id="reviews-link" class="block mt-4 lg:inline-block lg:mt-0 text-green-200 hover:text-white mr-4">
+                    Отзывы
+                </a>
+                <a href="#" id="feedback-link" class="block mt-4 lg:inline-block lg:mt-0 text-green-200 hover:text-white">
+                    Обратная связь
+                </a>
+
+            </div>
+            <div>
+                <button id="cartButton" class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-green-700 hover:bg-white mt-4 lg:mt-0">Корзина (<span id="cartCount">0</span>)</button>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<main class="flex-grow pt-8">
+    <div class="text-center p-8">
+        <h1 class="text-6xl font-bold italic text-pink-700 mb-4">Зефир в Che</h1>
+        <p class="text-3xl font-bold italic text-gray-700">Насладитесь нежным вкусом нашего зефира, созданного с любовью и заботой о каждом клиенте. Наш зефир - это идеальное сочетание натуральных ингредиентов и традиционных рецептов, которые передаются из поколения в поколение.</p>
+    </div>
+
+    <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-8">
+        <div class="max-w-md bg-white border border-gray-200 rounded-lg shadow-lg relative">
+            <a href="#" class="product-link" data-product-id="1">
+                <img class="rounded-t-lg w-full h-64 object-cover" src="photo/DALL·E%202024-07-15%2016.50.24%20-%20A%20classic%20white%20marshmallow%20(zephyr)%20as%20the%20main%20object%20in%20the%20foreground,%20with%20a%20few%20apples%20in%20the%20background.%20The%20marshmallow%20is%20beautifully%20arrange.webp" alt="Зефир со вкусом яблока" />
+            </a>
+            <div class="p-4">
+                <a href="#" class="product-link" data-product-id="1">
+                    <h5 class="mb-2 text-lg font-bold tracking-tight text-blue-900">Классический зефир на яблочном пюре</h5>
+                </a>
+                <p class="mb-3 font-normal text-gray-700"> Цена за 1 кг - 200 грн.</p>
+                <div class="flex items-center">
+                    <button class="minus bg-red-500 text-white px-2 py-1 rounded">-</button>
+                    <input type="text" class="quantity text-center w-12 mx-2" value="0.5" readonly>
+                    <button class="plus bg-green-500 text-white px-2 py-1 rounded">+</button>
+                    <button class="add-to-cart inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-purple-700 rounded-lg hover:bg-pink-400 focus:ring-4 focus:outline-none focus:ring-green-300 ml-4" data-product-id="1" data-product-name="Классический зефир на яблочном пюре" data-product-price="200">
+                        Добавить в корзину
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="max-w-md bg-white border border-gray-200 rounded-lg shadow-lg relative">
+            <a href="#" class="product-link" data-product-id="2">
+                <img class="rounded-t-lg w-full h-64 object-cover" src="photo/клубника.webp" alt="Клубничный зефир" />
+            </a>
+            <div class="p-4">
+                <a href="#" class="product-link" data-product-id="2">
+                    <h5 class="mb-2 text-lg font-bold tracking-tight text-blue-900">Нежный зефир на клубничном пюре</h5>
+                </a>
+                <p class="mb-3 font-normal text-gray-700"> Цена за 1 кг - 200 грн.</p>
+                <div class="flex items-center">
+                    <button class="minus bg-red-500 text-white px-2 py-1 rounded">-</button>
+                    <input type="text" class="quantity text-center w-12 mx-2" value="0.5" readonly>
+                    <button class="plus bg-green-500 text-white px-2 py-1 rounded">+</button>
+                    <button class="add-to-cart inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-purple-700 rounded-lg hover:bg-pink-400 focus:ring-4 focus:outline-none focus:ring-green-300 ml-4" data-product-id="2" data-product-name="Нежный зефир на клубничном пюре" data-product-price="200">
+                        Добавить в корзину
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="max-w-md bg-white border border-gray-200 rounded-lg shadow-lg relative">
+            <a href="#" class="product-link" data-product-id="3">
+                <img class="rounded-t-lg w-full h-64 object-cover" src="photo/малина.webp" alt="Малиновый зефир" />
+            </a>
+            <div class="p-4">
+                <a href="#" class="product-link" data-product-id="3">
+                    <h5 class="mb-2 text-lg font-bold tracking-tight text-blue-900">Ароматный зефир на основе малинового пюре</h5>
+                </a>
+                <p class="mb-3 font-normal text-gray-700"> Цена за 1 кг - 210 грн.</p>
+                <div class="flex items-center">
+                    <button class="minus bg-red-500 text-white px-2 py-1 rounded">-</button>
+                    <input type="text" class="quantity text-center w-12 mx-2" value="0.5" readonly>
+                    <button class="plus bg-green-500 text-white px-2 py-1 rounded">+</button>
+                    <button class="add-to-cart inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-purple-700 rounded-lg hover:bg-pink-400 focus:ring-4 focus:outline-none focus:ring-green-300 ml-4" data-product-id="3" data-product-name="Ароматный зефир на основе малинового пюре" data-product-price="210">
+                        Добавить в корзину
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="max-w-md bg-white border border-gray-200 rounded-lg shadow-lg relative">
+            <a href="#" class="product-link" data-product-id="4">
+                <img class="rounded-t-lg w-full h-64 object-cover" src="photo/черешня.webp" alt="Зефир со вкусом черешни" />
+            </a>
+            <div class="p-4">
+                <a href="#" class="product-link" data-product-id="4">
+                    <h5 class="mb-2 text-lg font-bold tracking-tight text-blue-900">Свежий зефир со вкусом черешни</h5>
+                </a>
+                <p class="mb-3 font-normal text-gray-700"> Цена за 1 кг - 230 грн.</p>
+                <div class="flex items-center">
+                    <button class="minus bg-red-500 text-white px-2 py-1 rounded">-</button>
+                    <input type="text" class="quantity text-center w-12 mx-2" value="0.5" readonly>
+                    <button class="plus bg-green-500 text-white px-2 py-1 rounded">+</button>
+                    <button class="add-to-cart inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-purple-700 rounded-lg hover:bg-pink-400 focus:ring-4 focus:outline-none focus:ring-green-300 ml-4" data-product-id="4" data-product-name="Свежий зефир со вкусом черешни" data-product-price="230">
+                        Добавить в корзину
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="max-w-md bg-white border border-gray-200 rounded-lg shadow-lg relative">
+            <a href="#" class="product-link" data-product-id="5">
+                <img class="rounded-t-lg w-full h-64 object-cover" src="photo/дыня.webp" alt="Зефир со вкусом дыни" />
+            </a>
+            <div class="p-4">
+                <a href="#" class="product-link" data-product-id="5">
+                    <h5 class="mb-2 text-lg font-bold tracking-tight text-blue-900">Сладкий зефир на основе пюре из дыни</h5>
+                </a>
+                <p class="mb-3 font-normal text-gray-700"> Цена за 1 кг - 250 грн.</p>
+                <div class="flex items-center">
+                    <button class="minus bg-red-500 text-white px-2 py-1 rounded">-</button>
+                    <input type="text" class="quantity text-center w-12 mx-2" value="0.5" readonly>
+                    <button class="plus bg-green-500 text-white px-2 py-1 rounded">+</button>
+                    <button class="add-to-cart inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-purple-700 rounded-lg hover:bg-pink-400 focus:ring-4 focus:outline-none focus:ring-green-300 ml-4" data-product-id="5" data-product-name="Сладкий зефир на основе пюре из дыни" data-product-price="250">
+                        Добавить в корзину
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="max-w-md bg-white border border-gray-200 rounded-lg shadow-lg relative">
+            <a href="#" class="product-link" data-product-id="6">
+                <img class="rounded-t-lg w-full h-64 object-cover" src="photo/груша.webp" alt="Зефир со вкусом груши" />
+            </a>
+            <div class="p-4">
+                <a href="#" class="product-link" data-product-id="6">
+                    <h5 class="mb-2 text-lg font-bold tracking-tight text-blue-900">Заманчивый зефир со вкусом спелой груши</h5>
+                </a>
+                <p class="mb-3 font-normal text-gray-700"> Цена за 1 кг - 200 грн.</p>
+                <div class="flex items-center">
+                    <button class="minus bg-red-500 text-white px-2 py-1 rounded">-</button>
+                    <input type="text" class="quantity text-center w-12 mx-2" value="0.5" readonly>
+                    <button class="plus bg-green-500 text-white px-2 py-1 rounded">+</button>
+                    <button class="add-to-cart inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-purple-700 rounded-lg hover:bg-pink-400 focus:ring-4 focus:outline-none focus:ring-green-300 ml-4" data-product-id="6" data-product-name="Заманчивый зефир со вкусом спелой груши" data-product-price="200">
+                        Добавить в корзину
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="max-w-md bg-white border border-gray-200 rounded-lg shadow-lg relative">
+            <a href="#" class="product-link" data-product-id="7">
+                <img class="rounded-t-lg w-full h-64 object-cover" src="photo/черника.webp" alt="Зефир со вкусом черники" />
+            </a>
+            <div class="p-4">
+                <a href="#" class="product-link" data-product-id="7">
+                    <h5 class="mb-2 text-lg font-bold tracking-tight text-blue-900">Освежающий зефир со вкусом черники</h5>
+                </a>
+                <p class="mb-3 font-normal text-gray-700"> Цена за 1 кг - 220 грн.</p>
+                <div class="flex items-center">
+                    <button class="minus bg-red-500 text-white px-2 py-1 rounded">-</button>
+                    <input type="text" class="quantity text-center w-12 mx-2" value="0.5" readonly>
+                    <button class="plus bg-green-500 text-white px-2 py-1 rounded">+</button>
+                    <button class="add-to-cart inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-purple-700 rounded-lg hover:bg-pink-400 focus:ring-4 focus:outline-none focus:ring-green-300 ml-4" data-product-id="7" data-product-name="Освежающий зефир со вкусом черники" data-product-price="220">
+                        Добавить в корзину
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="max-w-md bg-white border border-gray-200 rounded-lg shadow-lg relative">
+            <a href="#" class="product-link" data-product-id="8">
+                <img class="rounded-t-lg w-full h-64 object-cover" src="photo/сгущенка.webp" alt="Зефир со вкусом сгущенного молока" />
+            </a>
+            <div class="p-4">
+                <a href="#" class="product-link" data-product-id="8">
+                    <h5 class="mb-2 text-lg font-bold tracking-tight text-blue-900">Ароматный зефир со сгущенным молоком</h5>
+                </a>
+                <p class="mb-3 font-normal text-gray-700"> Цена за 1 кг - 250 грн.</p>
+                <div class="flex items-center">
+                    <button class="minus bg-red-500 text-white px-2 py-1 rounded">-</button>
+                    <input type="text" class="quantity text-center w-12 mx-2" value="0.5" readonly>
+                    <button class="plus bg-green-500 text-white px-2 py-1 rounded">+</button>
+                    <button class="add-to-cart inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-purple-700 rounded-lg hover:bg-pink-400 focus:ring-4 focus:outline-none focus:ring-green-300 ml-4" data-product-id="8" data-product-name="Ароматный зефир со сгущенным молоком" data-product-price="250">
+                        Добавить в корзину
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="max-w-md bg-white border border-gray-200 rounded-lg shadow-lg relative">
+            <a href="#" class="product-link" data-product-id="9">
+                <img class="rounded-t-lg w-full h-64 object-cover" src="photo/орех.webp" alt="Зефир с орехом" />
+            </a>
+            <div class="p-4">
+                <a href="#" class="product-link" data-product-id="9">
+                    <h5 class="mb-2 text-lg font-bold tracking-tight text-blue-900">Классический зефир с ореховой начинкой</h5>
+                </a>
+                <p class="mb-3 font-normal text-gray-700"> Цена за 1 кг - 260 грн.</p>
+                <div class="flex items-center">
+                    <button class="minus bg-red-500 text-white px-2 py-1 rounded">-</button>
+                    <input type="text" class="quantity text-center w-12 mx-2" value="0.5" readonly>
+                    <button class="plus bg-green-500 text-white px-2 py-1 rounded">+</button>
+                    <button class="add-to-cart inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-purple-700 rounded-lg hover:bg-pink-400 focus:ring-4 focus:outline-none focus:ring-green-300 ml-4" data-product-id="9" data-product-name="Классический зефир с ореховой начинкой" data-product-price="260">
+                        Добавить в корзину
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="max-w-md bg-white border border-gray-200 rounded-lg shadow-lg relative">
+            <a href="#" class="product-link" data-product-id="10">
+                <img class="rounded-t-lg w-full h-64 object-cover" src="photo/нуга.webp" alt="Зефир со вкусом нуги" />
+            </a>
+            <div class="p-4">
+                <a href="#" class="product-link" data-product-id="10">
+                    <h5 class="mb-2 text-lg font-bold tracking-tight text-blue-900">Зефир с начинкой из нуги на основе яблочного пюре</h5>
+                </a>
+                <p class="mb-3 font-normal text-gray-700"> Цена за 1 кг - 270 грн.</p>
+                <div class="flex items-center">
+                    <button class="minus bg-red-500 text-white px-2 py-1 rounded">-</button>
+                    <input type="text" class="quantity text-center w-12 mx-2" value="0.5" readonly>
+                    <button class="plus bg-green-500 text-white px-2 py-1 rounded">+</button>
+                    <button class="add-to-cart inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-purple-700 rounded-lg hover:bg-pink-400 focus:ring-4 focus:outline-none focus:ring-green-300 ml-4" data-product-id="10" data-product-name="Зефир с начинкой из нуги на основе яблочного пюре" data-product-price="270">
+                        Добавить в корзину
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="max-w-md bg-white border border-gray-200 rounded-lg shadow-lg relative">
+            <a href="#" class="product-link" data-product-id="11">
+                <img class="rounded-t-lg w-full h-64 object-cover" src="photo/шоколад.webp" alt="Зефир со вкусом черного шоколада" />
+            </a>
+            <div class="p-4">
+                <a href="#" class="product-link" data-product-id="11">
+                    <h5 class="mb-2 text-lg font-bold tracking-tight text-blue-900">Роскошный зефир на основе черного шоколада</h5>
+                </a>
+                <p class="mb-3 font-normal text-gray-700"> Цена за 1 кг - 220 грн.</p>
+                <div class="flex items-center">
+                    <button class="minus bg-red-500 text-white px-2 py-1 rounded">-</button>
+                    <input type="text" class="quantity text-center w-12 mx-2" value="0.5" readonly>
+                    <button class="plus bg-green-500 text-white px-2 py-1 rounded">+</button>
+                    <button class="add-to-cart inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-purple-700 rounded-lg hover:bg-pink-400 focus:ring-4 focus:outline-none focus:ring-green-300 ml-4" data-product-id="11" data-product-name="Роскошный зефир на основе черного шоколада" data-product-price="220">
+                        Добавить в корзину
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="max-w-md bg-white border border-gray-200 rounded-lg shadow-lg relative">
+            <a href="#" class="product-link" data-product-id="12">
+                <img class="rounded-t-lg w-full h-64 object-cover" src="photo/джем.webp" alt="Зефир с начинкой из яблочного джема" />
+            </a>
+            <div class="p-4">
+                <a href="#" class="product-link" data-product-id="12">
+                    <h5 class="mb-2 text-lg font-bold tracking-tight text-blue-900">Классический зефир с начинкой из яблочного джема</h5>
+                </a>
+                <p class="mb-3 font-normal text-gray-700"> Цена за 1 кг - 200 грн.</p>
+                <div class="flex items-center">
+                    <button class="minus bg-red-500 text-white px-2 py-1 rounded">-</button>
+                    <input type="text" class="quantity text-center w-12 mx-2" value="0.5" readonly>
+                    <button class="plus bg-green-500 text-white px-2 py-1 rounded">+</button>
+                    <button class="add-to-cart inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-purple-700 rounded-lg hover:bg-pink-400 focus:ring-4 focus:outline-none focus:ring-green-300 ml-4" data-product-id="12" data-product-name="Классический зефир с начинкой из яблочного джема" data-product-price="200">
+                        Добавить в корзину
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<div id="cartModal" class="fixed inset-0 bg-gray-600 bg-opacity-75 flex items-center justify-center hidden">
+    <div class="cart bg-white shadow-md rounded-lg p-4 mt-8 mx-4 md:mx-auto max-w-2xl">
+        <h2 class="text-2xl font-semibold mb-4">Корзина</h2>
+        <div id="cart-items"></div>
+        <p class="text-lg font-semibold mt-4">Общая сумма: <span id="cart-total">грн</span></p>
+        <div class="cart-buttons mt-4 flex space-x-4">
+            <a href="form.html" class="bg-green-500 text-white px-4 py-2 rounded">Оформить заказ</a>
+            <a href="#" onclick="closeCart()" id="continue-shopping" class="bg-yellow-500 text-white px-4 py-2 rounded">Продолжить покупки</a>
+            <a href="#" onclick="closeCart()" id="close-cart" class="bg-red-500 text-white px-4 py-2 rounded">Закрыть</a>
+        </div>
+    </div>
+</div>
+
+<div id="infoModal" class="fixed inset-0 bg-gray-600 bg-opacity-75 flex items-center justify-center hidden">
+    <div class="bg-white shadow-md rounded-lg p-6 w-11/12 md:w-1/2 lg:w-1/3">
+        <h2 class="text-2xl font-semibold mb-4">Информация для потребителя</h2>
+        <p> <b>Наш зефир в городе Черкассы</b> – это уникальное сочетание натуральных ингредиентов и традиционных рецептов, которые передаются из поколения в поколение. Каждый кусочек зефира изготавливается с любовью и вниманием к деталям, чтобы подарить вам незабываемое удовольствие. Мы доставляем наш зефир по всей Украине с помощью <b>Новой Почты</b>, чтобы каждый мог насладиться его вкусом. Независимо от того, где вы находитесь, вы можете быть уверены, что ваш заказ будет доставлен быстро и в идеальном состоянии. <br><b>График работы:</b> с ПН по ВС с 9:00 до 19:00.<br><b>Номера для заказа:</b>  099-33-504-95 и 095-52-47-477  </p>
+
+        <button id="closeInfoModal" class="bg-red-500 text-white px-4 py-2 mt-4 rounded">Закрыть</button>
+    </div>
+</div>
+
+<div id="reviewsModal" class="fixed inset-0 bg-gray-600 bg-opacity-75 flex items-center justify-center hidden">
+    <div class="bg-white shadow-md rounded-lg p-6 w-11/12 md:w-1/2 lg:w-1/3 relative">
+        <h2 class="text-2xl font-semibold mb-4">Отзывы</h2>
+        <p>Пока никто не оставил отзыв, будьте первым!</p>
+        <form id="reviewsForm">
+            <label for="name" class="block text-gray-700">Ваше имя:</label>
+            <input type="text" id="name" name="name" class="w-full p-2 border border-gray-300 rounded mb-2" required>
+            <span id="nameError" class="text-red-500 text-sm mb-4"></span>
+            <label for="review" class="block text-gray-700">Ваш отзыв:</label>
+            <textarea id="review" name="review" class="w-full p-2 border border-gray-300 rounded mb-2" maxlength="500" required></textarea>
+            <span id="reviewError" class="text-red-500 text-sm mb-4"></span>
+            <div class="flex justify-between mt-4">
+                <button type="submit" class="bg-green-500 text-white px-4 py-2 rounded">Отправить</button>
+                <button id="closeReviewsModal" type="button" class="bg-red-500 text-white px-4 py-2 rounded">Закрыть</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div id="feedbackModal" class="fixed inset-0 bg-gray-600 bg-opacity-75 flex items-center justify-center hidden">
+    <div class="bg-white rounded-lg shadow-md p-6 max-w-lg">
+        <h2 class="text-xl font-semibold mb-4">Обратная связь</h2>
+        <p>Если у вас есть жалобы или предложения - оставьте свои данные и мы обязательно свяжемся с вами!</p>
+        <form id="feedbackForm">
+            <div class="mb-4">
+                <label for="phone" class="block text-sm font-medium text-gray-700">Телефон</label>
+                <input type="text" id="phone" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm" value="+380" required>
+                <span id="phoneError" class="text-red-500 text-sm"></span>
+            </div>
+            <div class="mb-4">
+                <label for="message" class="block text-sm font-medium text-gray-700">Сообщение</label>
+                <textarea id="message" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm" maxlength="200" required></textarea>
+                <span id="messageError" class="text-red-500 text-sm"></span>
+            </div>
+            <div class="mb-4">
+                <label for="email" class="block text-sm font-medium text-gray-700">Электронная почта (необязательно)</label>
+                <input type="email" id="email" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm">
+                <span id="emailError" class="text-red-500 text-sm"></span>
+            </div>
+            <div class="flex justify-between">
+                <button type="button" id="closeFeedbackModal" class="bg-red-500 text-white px-4 py-2 rounded">Закрыть</button>
+                <button type="submit" class="bg-green-500 text-white px-4 py-2 rounded">Отправить</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+<footer class="bg-white rounded-lg shadow py-6 px-4 dark:bg-gray-800 w-full text-center mt-8">
+    <span class="text-sm text-gray-500">© 2023 Flowbite™. All Rights Reserved.</span>
+</footer>
+
+
+
+
+<script src="js/main.js"></script>
+</body>
+</html>
